@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body class="bg-slate-200">
+    <div class="container mx-auto my-12">
+      <div class="text-slate-950 text-5xl font-bold flex justify-center">
+        CRUD [Create, Read, Update, Delete]
+      </div>
+
+      <div class="container mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 my-24">
+          <!-- table for get all data from database table -->
+          <div class="mx-auto flex flex-col justify-center items-center">
+            <div class="text-2xl text-emerald-800 font-bold p-6 text-center">
+              Table data from Database
+            </div>
+            <div class="">
+              <table
+                class="w-[600px] text-sm text-gray-500 text-center bg-white"
+              >
+                <thead class="text-xs text-gray-700 uppercase bg-gray-100">
+                  <tr>
+                    <th scope="col" class="py-3 px-2">ID</th>
+                    <th scope="col" class="py-3 px-6">Name</th>
+                    <th scope="col" class="py-3 px-6">Email</th>
+                    <th scope="col" class="py-3 px-2">Edit</th>
+                    <th scope="col" class="py-3 px-2">Delete</th>
+                  </tr>
+                </thead>
+                <tbody id="tableBody">
+                  <tr class="bg-white border-b">
+                    <td class="py-4 px-2"></td>
+                    <td class="py-4 px-6"></td>
+                    <td class="py-4 px-6"></td>
+                    <td class="py-4 px-2">
+                      <button
+                        type="button"
+                        data-id="${user.id}"
+                        class="edit-btn"
+                      >
+                        Edit
+                      </button>
+                    </td>
+                    <td class="py-4 px-2">
+                      <button
+                        type="button"
+                        data-id="${user.id}"
+                        class="delete-btn"
+                      >
+                        Delete
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div>
+            <!-- section of inputs for sending data into table of database -->
+            <section class="grid place-items-center p-16">
+              <div class="text-2xl text-emerald-800 font-bold p-6">
+                Send data into Database
+              </div>
+              <div class="flex gap-4">
+                <!-- Input: Designation [h-12] & min-w-[12rem] -->
+                <form id="userForm" class="flex gap-4">
+                  <input
+                    id="nameInput"
+                    name="name"
+                    class="h-12 min-w-[12rem] rounded-lg border-emerald-500 indent-4 text-emerald-900 shadow-lg focus:outline-none focus:ring focus:ring-emerald-600"
+                    type="text"
+                    placeholder="Name"
+                    required
+                  />
+
+                  <input
+                    id="emailInput"
+                    name="email"
+                    class="h-12 min-w-[12rem] rounded-lg border-emerald-500 indent-4 text-emerald-900 shadow-lg focus:outline-none focus:ring focus:ring-emerald-600"
+                    type="email"
+                    placeholder="Email"
+                    required
+                  />
+
+                  <!-- Change type to submit to trigger form submission -->
+                  <button
+                    type="submit"
+                    class="h-12 min-w-[8rem] rounded-lg border-2 border-emerald-600 bg-emerald-500 text-emerald-50 shadow-lg hover:bg-emerald-600 focus:outline-none focus:ring focus:ring-emerald-600"
+                  >
+                    Submit
+                  </button>
+                </form>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
